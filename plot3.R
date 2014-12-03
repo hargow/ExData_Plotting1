@@ -1,5 +1,3 @@
-setwd("/Users/liang.huang/Documents/R/Coursera/exploratory")
-
 zipfilepath<-"./household_power_consumption.zip"
 url<-"https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
 if (!file.exists(zipfilepath)) {
@@ -13,7 +11,7 @@ rowstokeep<-data$Date=="1/2/2007" | data$Date=="2/2/2007"
 data<-data[rowstokeep,]
 data$Datetime <- strptime(paste(data$Date, data$Time), "%d/%m/%Y %H:%M:%S")
 
-png(filename = "./ExData_Plotting1/plot3.png",width = 480, height = 480, units = "px")
+png(filename = "./plot3.png",width = 480, height = 480, units = "px")
 
 plot(data$Datetime, data$Sub_metering_1, type = "l", xlab="", ylab = "Energy sub metering",col="black")
 points(data$Datetime, data$Sub_metering_2, type = "l", xlab = "", ylab = "Energy sub metering", col = "red")
